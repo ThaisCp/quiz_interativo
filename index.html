@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Caso o tempo do template de para mais de uma pessoa responder, basta regular o tempo de refresh na pagina aqui, contagem por segundos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template HTML Atmo</title>
+	<link rel="stylesheet" type="text/css" href="styleTemplate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+          integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="game.css">
+
+
+</head>
+
+<body>
+
+
+<div class="container" >
+    <div class="inicio">
+        <div id="home" href="#home" class="flex-column flex-center">
+            <h1>PARTICIPAR </h1>
+            <div class="circleanimation" >
+                <div class="avatar">
+                    <a href="#quiz" style="text-decoration: none;">
+                    <img src="img/maozinha.png" width="125" height="125"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- //aqui é o FIM INDEX.HTML// -->
+<div class="container">
+    <div class="nome">
+        <div id="quiz" class="flex-column flex-center">
+            <h1>Qual seu Nome?</h1>
+            <input type="name" id="name" name="name">
+
+            <a class="btn" href="#iniciar">INICIAR</a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- //aqui é o GAME.HTML// -->
+<div class="container" style=" padding: 10%;">
+    <div class="perguntas">
+        <div id="iniciar">
+            <div id="hud">
+                <div class="hud-item">
+                    <p id="progressText" class="hud-prefix">
+                        Perguntas
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">
+                        Score
+                    </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
+            <h1 id="question">ESCOLHA UMA DAS OPÇÕES</h1>
+            <div class="choice-container">
+                <p class="choice-prefix">A</p>
+                <p class="choice-text" data-number="1">Choice</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">B</p>
+                <p class="choice-text" data-number="2">Choice 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">C</p>
+                <p class="choice-text" data-number="3">Choice 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">D</p>
+                <p class="choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //aqui é o FIM GAME.HTML// -->
+
+<!-- //aqui é o  END.HTML// -->
+<div id="end" class="flex-column flex-center childss" style="margin: 10%;">
+
+    <h1>Sua Pontuação é</h1>
+    <h1 id="finalScore">0</h1>
+    <h2 id="end-text">Obrigada por participar!</h2>
+    <a href="#iniciar" class="btn">JOGAR NOVAMENTE ?</a>
+    <a href="#home" class="btn-home">VOLTAR AO INICIO<i class="fas fa-home"></i></a>
+</div>
+<!-- //aqui é o  END.HTML// -->
+<script src="game.js"></script>
+<script src="end.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="scriptBarra.js" charset="UTF-8"></script>
+</body>
+</html>
+
+<style>
+    .inicio {
+        height: 100vh;
+        position:relative ;
+        display: flex;
+    }
+
+    #home {
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    .nome {
+        height: 100vh;
+        position:relative ;
+        display: flex;
+    }
+
+    .perguntas {
+        height: 100vh;
+        position:relative ;
+        display: flex;
+    }
+    
+
+    .fim {
+        height: 100vh;
+
+    }
+    
+    #end{
+        height: 100vh;
+    }
+    
+    #quiz {
+        text-align: center;
+    }
+
+    
+    /* CIRCLE ANIMATION */
+
+    
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.circleanimation {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.avatar {
+	width: 150px;
+	height: 150px;
+	box-sizing: border-box;
+	border: 5px white solid;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+
+}
+
+
+.suppoprt-me {
+	display: inline-block;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 20vw;
+	max-width: 250px;
+	min-width: 200px;
+	z-index: 9;
+
+}
+
+</style>
